@@ -36,6 +36,7 @@ public class JavaEstimatorTransformerParamExample {
         RowFactory.create(0.0, Vectors.dense(2.0, 1.3, 1.0)),
         RowFactory.create(1.0, Vectors.dense(0.0, 1.2, -0.5))
     );
+    
     StructType schema = new StructType(new StructField[]{
         new StructField("label", DataTypes.DoubleType, false, Metadata.empty()),
         new StructField("features", new VectorUDT(), false, Metadata.empty())
@@ -56,6 +57,7 @@ public class JavaEstimatorTransformerParamExample {
     // we can view the parameters it used during fit().
     // This prints the parameter (name: value) pairs, where names are unique IDs for this
     // LogisticRegression instance.
+    
     System.out.println("Model 1 was fit using parameters: " + model1.parent().extractParamMap());
 
     // We may alternatively specify parameters using a ParamMap.
@@ -93,7 +95,6 @@ public class JavaEstimatorTransformerParamExample {
         + ", prediction=" + r.get(3));
     }
     // $example off$
-
     spark.stop();
   }
 }
